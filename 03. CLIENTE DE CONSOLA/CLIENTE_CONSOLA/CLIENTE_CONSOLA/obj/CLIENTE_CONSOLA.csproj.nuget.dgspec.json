@@ -1,0 +1,101 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\Arquitectura de Software\\Segundo Parcial\\CELULARES BDD NUBE\\DOTNET\\CELULARES_DOTNET_RESTFUL\\CLICON\\CLIENTE_CONSOLA\\CLIENTE_CONSOLA\\CLIENTE_CONSOLA.csproj": {}
+  },
+  "projects": {
+    "D:\\Arquitectura de Software\\Segundo Parcial\\CELULARES BDD NUBE\\DOTNET\\CELULARES_DOTNET_RESTFUL\\CLICON\\CLIENTE_CONSOLA\\CLIENTE_CONSOLA\\CLIENTE_CONSOLA.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Arquitectura de Software\\Segundo Parcial\\CELULARES BDD NUBE\\DOTNET\\CELULARES_DOTNET_RESTFUL\\CLICON\\CLIENTE_CONSOLA\\CLIENTE_CONSOLA\\CLIENTE_CONSOLA.csproj",
+        "projectName": "CLIENTE_CONSOLA",
+        "projectPath": "D:\\Arquitectura de Software\\Segundo Parcial\\CELULARES BDD NUBE\\DOTNET\\CELULARES_DOTNET_RESTFUL\\CLICON\\CLIENTE_CONSOLA\\CLIENTE_CONSOLA\\CLIENTE_CONSOLA.csproj",
+        "packagesPath": "C:\\Users\\Andrés\\.nuget\\packages\\",
+        "outputPath": "D:\\Arquitectura de Software\\Segundo Parcial\\CELULARES BDD NUBE\\DOTNET\\CELULARES_DOTNET_RESTFUL\\CLICON\\CLIENTE_CONSOLA\\CLIENTE_CONSOLA\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Andrés\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.Extensions.ApiDescription.Client": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.2, )"
+            },
+            "NSwag.ApiDescription.Client": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[13.18.2, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            },
+            "System.ServiceModel.Duplex": {
+              "target": "Package",
+              "version": "[4.10.*, )"
+            },
+            "System.ServiceModel.Federation": {
+              "target": "Package",
+              "version": "[4.10.*, )"
+            },
+            "System.ServiceModel.Http": {
+              "target": "Package",
+              "version": "[4.10.*, )"
+            },
+            "System.ServiceModel.NetTcp": {
+              "target": "Package",
+              "version": "[4.10.*, )"
+            },
+            "System.ServiceModel.Security": {
+              "target": "Package",
+              "version": "[4.10.*, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

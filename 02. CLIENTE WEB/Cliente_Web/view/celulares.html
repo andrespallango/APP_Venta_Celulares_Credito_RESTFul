@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú de Celulares</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <div class="menu-container">
+        <!-- Barra lateral -->
+        <div class="sidebar">
+            <img src="https://www.espe.edu.ec/wp-content/uploads/2018/11/espe.png" alt="Logo ESPE">
+            <h2>Comercializadora</h2>
+            <a href="../index.html">Volver al Menú Principal</a>
+        </div>
+
+        <!-- Contenido principal -->
+        <div class="content">
+            <h1>Selecciona una opción</h1>
+            <div class="cards">
+                <!-- Opción: Catálogo -->
+                <div class="card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQC4gPpnW3uP5xPyysuWhNeypaCs5dDSeUjXA&s" alt="Catálogo">
+                    <h3>Catálogo</h3>
+                    <p>Consulta el catálogo completo de celulares disponibles.</p>
+                    <button onclick="goToCatalogo()">Ir</button>
+                </div>
+
+                <!-- Opción: Mantenimiento del Catálogo -->
+                <div class="card">
+                    <img src="https://cdn-icons-png.freepik.com/256/12201/12201509.png?semt=ais_hybrid" alt="Mantenimiento">
+                    <h3>Mantenimiento del Catálogo</h3>
+                    <p>Gestiona los productos del catálogo de celulares.</p>
+                    <button onclick="goToMantenimiento()">Ir</button>
+                </div>
+
+                <!-- Opción: Registrar Venta -->
+                <div class="card">
+                    <img src="https://cdn-icons-png.freepik.com/256/994/994649.png?semt=ais_hybrid" alt="Venta">
+                    <h3>Registrar Venta</h3>
+                    <p>Registra la venta de celulares a clientes.</p>
+                    <button onclick="goToVenta()">Ir</button>
+                </div>
+
+                <!-- Opción: Consultar Tabla de Amortización -->
+                <div class="card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1827/1827235.png" alt="Amortización">
+                    <h3>Tabla de Amortización</h3>
+                    <p>Consulta la tabla de amortización de un cliente.</p>
+                    <button onclick="goToAmortizacion()">Ir</button>
+                </div>
+                <!-- Opción: Mostrar Factura -->
+                <div class="card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2693/2693336.png" alt="Factura">
+                    <h3>Mostrar Facturas</h3>
+                    <p>Consulta la factura de una venta realizada.</p>
+                    <button onclick="goToFactura()">Ir</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Función para redirigir a la página de Catálogo
+        function goToCatalogo() {
+            window.location.href = "./catalogo.html";
+        }
+
+        // Función para redirigir a la página de Mantenimiento del Catálogo
+        function goToMantenimiento() {
+            window.location.href = "./mantenimiento.html";
+        }
+
+        // Función para redirigir a la página de Registrar Venta
+        function goToVenta() {
+            window.location.href = "./venta.html";
+        }
+
+        // Función para redirigir a la página de Consultar Tabla de Amortización
+        function goToAmortizacion() {
+            window.location.href = "./amortizacion.html";
+        }
+        // Función para redirigir a la página de Mostrar Factura
+        function goToFactura() {
+            window.location.href = "./factura.html";
+        }
+    </script>
+</body>
+</html>

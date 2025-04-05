@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factura</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <h1>Factura</h1>
+    </header>
+    <!-- Barra lateral -->
+    <div class="sidebar">
+        <img src="https://www.espe.edu.ec/wp-content/uploads/2018/11/espe.png" alt="Logo ESPE">
+        <h2>Comercializadora</h2>
+        <a href="celulares.html">Volver</a>
+    </div>
+    <!-- Contenido principal -->
+    <div class="content">
+        <h2>Consulta de Factura</h2>
+        <form id="consultaFacturasForm" class="form">
+            <label for="cedula">Cédula:</label>
+            <input type="text" id="cedula" required>
+            <button type="submit">Consultar</button>
+        </form>
+
+        <div class="factura">
+            <h3>Facturas</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Código Factura</th>
+                        <th>Fecha</th>
+                        <th>Forma de Pago</th>
+                        <th>Acción</th>
+                    </tr>
+                </thead>
+                <tbody id="facturasTableBody">
+                    <!-- Facturas cargadas dinámicamente -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Modal para mostrar el detalle de la factura -->
+        <div id="detalleFacturaModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="cerrarDetalleFacturaModal()">&times;</span>
+                <h2>Detalle de la Factura</h2>
+                <div id="detalleFacturaInfo">
+                    <!-- Información de la factura cargada dinámicamente -->
+                </div>
+                <table class="factura">
+                    <thead>
+                        <tr>
+                            <th>Código Producto</th>
+                            <th>Nombre Producto</th>
+                            <th>Cantidad</th>
+                            <th>Precio Unitario</th>
+                        </tr>
+                    </thead>
+                    <tbody id="detallesTableBody">
+                        <!-- Detalles cargados dinámicamente -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="../controller/verFacturas.js"></script>
+</body>
+</html>

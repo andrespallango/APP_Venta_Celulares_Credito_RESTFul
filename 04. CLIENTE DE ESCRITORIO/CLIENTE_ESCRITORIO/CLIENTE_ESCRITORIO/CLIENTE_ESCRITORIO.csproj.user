@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Compile Update="ec.edu.monster.view\Amortizacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ec.edu.monster.view\Banco.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ec.edu.monster.view\Catalogo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ec.edu.monster.view\Celulares.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ec.edu.monster.view\Factura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ec.edu.monster.view\MainView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ec.edu.monster.view\Mantenimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ec.edu.monster.view\Venta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>

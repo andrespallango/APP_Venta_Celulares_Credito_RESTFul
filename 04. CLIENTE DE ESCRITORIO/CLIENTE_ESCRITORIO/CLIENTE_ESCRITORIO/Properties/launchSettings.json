@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "CLIENTE_ESCRITORIO": {
+      "commandName": "Project",
+      "nativeDebugging": true,
+      "sqlDebugging": true,
+      "jsWebView2Debugging": true
+    }
+  }
+}

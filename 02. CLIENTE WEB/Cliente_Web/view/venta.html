@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Venta</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        /* Estilos para el modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            max-width: 90%;
+            max-height: 90%;
+        }
+        .modal-content img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 24px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu-container">
+        <!-- Barra lateral -->
+        <div class="sidebar">
+            <img src="https://www.espe.edu.ec/wp-content/uploads/2018/11/espe.png" alt="Logo ESPE">
+            <h2>Comercializadora</h2>
+            <a href="celulares.html">Volver</a>
+        </div>
+
+        <!-- Contenido principal -->
+        <div class="content">
+            <h1>Registrar Venta</h1>
+
+            <!-- Verificar cliente -->
+            <div>
+                <label for="cedulaCliente">Cédula del Cliente:</label>
+                <input type="text" id="cedulaCliente" placeholder="Ingrese la cédula del cliente">
+                <button id="verificarClienteBtn">Verificar Cliente</button>
+                <div id="clienteInfo" style="display: none;">
+                    <p id="clienteSujetoCredito"></p>
+                    <p id="montoMaximoCredito"></p>
+                </div>
+            </div>
+
+            <!-- Forma de pago -->
+            <div id="formaPagoContainer" style="display: none;">
+                <h3>Seleccione la forma de pago:</h3>
+                <label><input type="radio" name="formaPago" value="Efectivo" id="pagoEfectivo"> Efectivo</label>
+                <label><input type="radio" name="formaPago" value="Crédito" id="pagoCredito"> Crédito</label>
+            </div>
+
+            <!-- Agregar productos -->
+            <div id="productosContainer" style="display: none;">
+                <h3>Agregar Productos:</h3>
+                <label for="codigoProducto">Código del Producto:</label>
+                <input type="text" id="codigoProducto" placeholder="Ingrese el código del producto">
+                <label for="cantidadProducto">Cantidad:</label>
+                <input type="number" id="cantidadProducto" min="1" placeholder="Cantidad">
+                <button id="agregarProductoBtn">Agregar Producto</button>
+
+                <!-- Tabla de productos -->
+                <h3>Productos Seleccionados:</h3>
+                <table id="productosSeleccionados" class="catalogo-table">
+                    <thead>
+                        <tr>
+                            <th>Código</th>
+                            <th>Nombre</th>
+                            <th>Cantidad</th>
+                            <th>Subtotal</th>
+                            <th>Foto</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Productos agregados dinámicamente -->
+                    </tbody>
+                </table>
+
+                <!-- Total de venta -->
+                <h3>Total de Venta:</h3>
+                <p><strong>$<span id="totalVenta">0.00</span></strong></p>
+            </div>
+
+            <!-- Número de cuotas -->
+            <div id="cuotasContainer" style="display: none;">
+                <h3>Seleccione el número de cuotas:</h3>
+                <label for="numeroCuotas">Número de Cuotas:</label>
+                <input type="number" id="numeroCuotas" min="1" max="36" placeholder="Número de cuotas">
+            </div>
+
+            <!-- Registrar venta -->
+            <button id="registrarVentaBtn" disabled>Registrar Venta</button>
+        </div>
+    </div>
+
+    <!-- Modal para mostrar la foto -->
+    <div id="fotoModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="cerrarModal()">&times;</span>
+            <img id="fotoModalImg" src="" alt="Foto del producto">
+        </div>
+    </div>
+
+    <!-- Se asegura que el script se cargue correctamente -->
+    <script type="module" src="../controller/ventaController.js"></script>
+    <script>
+        function mostrarFoto(fotoUrl) {
+            const modal = document.getElementById("fotoModal");
+            const modalImg = document.getElementById("fotoModalImg");
+            modalImg.src = fotoUrl;
+            modal.style.display = "flex";
+        }
+
+        function cerrarModal() {
+            const modal = document.getElementById("fotoModal");
+            modal.style.display = "none";
+        }
+    </script>
+</body>
+</html>

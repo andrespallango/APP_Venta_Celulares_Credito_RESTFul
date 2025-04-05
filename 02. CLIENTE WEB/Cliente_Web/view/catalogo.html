@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        /* Estilos para el modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            max-width: 90%;
+            max-height: 90%;
+        }
+        .modal-content img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 24px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu-container">
+        <!-- Barra lateral -->
+        <div class="sidebar">
+            <img src="https://www.espe.edu.ec/wp-content/uploads/2018/11/espe.png" alt="Logo ESPE">
+            <h2>Comercializadora</h2>
+            <a href="celulares.html">Volver</a>
+        </div>
+
+        <!-- Contenido principal -->
+        <div class="content">
+            <h1>Catálogo de Celulares</h1>
+            <table id="catalogo" class="catalogo-table">
+                <thead>
+                    <tr>
+                        <th>Código</th>
+                        <th>Nombre</th>
+                        <th>Precio</th>
+                        <th>Acción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Los teléfonos se cargarán aquí -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Modal para mostrar la foto -->
+    <div id="fotoModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="cerrarModal()">&times;</span>
+            <img id="fotoModalImg" src="" alt="Foto del producto">
+        </div>
+    </div>
+
+    <script type="module">
+        import { listarTelefonos } from '../controller/catalogoController.js';
+
+        async function cargarCatalogo() {
+            const catalogoTableBody = document.querySelector("#catalogo tbody");
+
+            try {
+                const telefonos = await listarTelefonos();
+                if (telefonos.length === 0) {
+                    catalogoTableBody.innerHTML = "<tr><td colspan='4'>No hay teléfonos disponibles en el catálogo.</td></tr>";
+                    return;
+                }
+
+                // Renderizar los teléfonos en la tabla
+                telefonos.forEach(telefono => {
+                    const row = document.createElement("tr");
+                    row.innerHTML = `
+                        <td>${telefono.codProducto}</td>
+                        <td>${telefono.nombre}</td>
+                        <td>$${parseFloat(telefono.precio).toFixed(2)}</td>
+                        <td><button onclick="mostrarFoto('${telefono.foto}')">Ver foto</button></td>
+                    `;
+                    catalogoTableBody.appendChild(row);
+                });
+            } catch (error) {
+                console.error("Error al cargar el catálogo:", error);
+                catalogoTableBody.innerHTML = "<tr><td colspan='4'>Error al cargar el catálogo. Intente nuevamente.</td></tr>";
+            }
+        }
+
+        // Mostrar la foto en el modal
+        window.mostrarFoto = function(fotoUrl) {
+            const modal = document.getElementById("fotoModal");
+            const modalImg = document.getElementById("fotoModalImg");
+            modalImg.src = fotoUrl;
+            modal.style.display = "flex";
+        };
+
+        // Cerrar el modal
+        window.cerrarModal = function() {
+            const modal = document.getElementById("fotoModal");
+            modal.style.display = "none";
+        };
+
+        // Cargar el catálogo al cargar la página
+        cargarCatalogo();
+    </script>
+</body>
+</html>
